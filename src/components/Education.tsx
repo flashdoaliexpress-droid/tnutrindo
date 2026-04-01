@@ -10,6 +10,20 @@ interface Article {
   body: string;
 }
 
+const FEATURED_ARTICLE: Article = {
+  tag: 'Fisiologia Individual',
+  title: 'Por que cada pessoa precisa de uma dieta personalizada',
+  summary: 'Cada corpo é único — e a alimentação ideal também é.',
+  image: '/Consciência Alimentar.webp',
+  imageAlt: 'Vegetais orgânicos vibrantes e folhas verdes',
+  readTime: '8 min de leitura',
+  body: `Cada corpo é único — e a alimentação ideal também é.
+
+Fatores como genética, idade, rotina, nível de atividade física e condições de saúde influenciam diretamente o que o seu organismo precisa. Uma dieta que funciona perfeitamente para uma pessoa pode não trazer os mesmos resultados para outra, ou até ser prejudicial.
+
+Por isso, contar com a orientação de um nutricionista é essencial para montar um plano alimentar que respeite a sua individualidade e alcance os seus objetivos de verdade.`,
+};
+
 const ARTICLES: Article[] = [
   {
     tag: 'Fibras',
@@ -64,27 +78,30 @@ export default function Education() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-10 gap-6">
-          <div className="md:col-span-6 group relative overflow-hidden bg-primary h-[500px] md:h-[600px] shadow-sm flex flex-col justify-end p-10 md:p-12">
+          <button
+            onClick={() => setOpenArticle(FEATURED_ARTICLE)}
+            className="md:col-span-6 group relative overflow-hidden bg-primary h-[500px] md:h-[600px] shadow-sm flex flex-col justify-end p-10 md:p-12 text-left cursor-pointer"
+          >
             <div className="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-700">
               <img
-                alt="Vegetais orgânicos vibrantes e folhas verdes com iluminação natural suave e sombras profundas sobre fundo escuro"
+                alt={FEATURED_ARTICLE.imageAlt}
                 className="w-full h-full object-cover"
-                src="/Consciência Alimentar.webp"
+                src={FEATURED_ARTICLE.image}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
             </div>
             <div className="relative z-10">
               <span className="text-secondary-fixed text-xs font-bold tracking-widest uppercase mb-4 block">
-                Fisiologia Individual
+                {FEATURED_ARTICLE.tag}
               </span>
               <h3 className="font-headline italic text-3xl md:text-5xl text-on-primary leading-tight mb-6 max-w-lg">
-                Por que sua dieta funciona para a sua vizinha e não para você?
+                {FEATURED_ARTICLE.title}
               </h3>
               <div className="flex items-center text-on-primary/60 text-sm font-medium tracking-wide">
-                <span className="material-symbols-outlined text-sm mr-2">schedule</span>8 min de leitura
+                <span className="material-symbols-outlined text-sm mr-2">schedule</span>{FEATURED_ARTICLE.readTime}
               </div>
             </div>
-          </div>
+          </button>
 
           <div className="md:col-span-4 flex flex-col gap-6">
             <div className="flex-1 bg-surface-container-lowest p-8 md:p-10 flex flex-col justify-between group cursor-pointer hover:shadow-lg transition-shadow duration-300">
