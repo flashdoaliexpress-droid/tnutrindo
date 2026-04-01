@@ -1,4 +1,52 @@
+import { useState } from 'react';
+
+interface Article {
+  tag: string;
+  title: string;
+  summary: string;
+  image: string;
+  imageAlt: string;
+  readTime: string;
+  body: string;
+}
+
+const ARTICLES: Article[] = [
+  {
+    tag: 'Fibras',
+    title: 'O poder das fibras — e por que a maioria das pessoas não ingere o suficiente',
+    summary: 'Além de regular o intestino, fibras alimentam o microbioma e reduzem inflamação.',
+    image: '/Artigo Fibras.jfif',
+    imageAlt: 'Frutas, leguminosas e grãos integrais ricos em fibras',
+    readTime: '4 min de leitura',
+    body: `O consumo de fibras virou tema central em 2026. Além de regular o intestino, fibras alimentam o microbioma (as bactérias "boas" do intestino), ajudam no controle glicêmico e reduzem inflamação. A maior parte das pessoas consome menos da metade do que deveria.
+
+Fontes: frutas, leguminosas, grãos integrais e sementes.`,
+  },
+  {
+    tag: 'Mindful Eating',
+    title: 'Alimentação consciente (Mindful Eating) — comer bem vai além da dieta',
+    summary: 'Entenda os gatilhos emocionais que levam à compulsão e aprenda a comer com atenção plena.',
+    image: '/Artigo Alimentação Conciente.webp',
+    imageAlt: 'Pessoa comendo com atenção plena e consciência',
+    readTime: '5 min de leitura',
+    body: `A relação emocional com a comida tem ganhado muito espaço. O mindful eating propõe entender os gatilhos emocionais que levam à compulsão, comer com atenção plena e sem culpa.
+
+É um assunto que ressoa com quase todo mundo, já que a maioria das pessoas já teve dificuldades com "comer por ansiedade".`,
+  },
+  {
+    tag: 'Proteína',
+    title: 'Proteína: quanto você realmente precisa?',
+    summary: 'Há muita confusão sobre quantidade, fontes e distribuição ao longo do dia.',
+    image: '/Artigo Proteinas.jpg',
+    imageAlt: 'Fontes de proteína — ovos, leguminosas e carnes magras',
+    readTime: '5 min de leitura',
+    body: `Proteínas viraram obsessão popular, mas há muita confusão sobre quantidade, fontes e distribuição ao longo do dia. Entender o papel da proteína na saciedade, na preservação muscular e no metabolismo é algo útil tanto para quem quer emagrecer quanto para quem quer ganhar massa ou simplesmente ter mais energia.`,
+  },
+];
+
 export default function Education() {
+  const [openArticle, setOpenArticle] = useState<Article | null>(null);
+
   return (
     <section id="educacao" className="bg-surface-container-low py-[100px] px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
@@ -71,65 +119,74 @@ export default function Education() {
           </div>
 
           <div className="md:col-span-10 grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-            <div className="bg-surface-container-lowest p-6 flex items-center gap-6 group cursor-pointer hover:shadow-md transition-shadow">
-              <div className="w-24 h-24 overflow-hidden flex-shrink-0">
-                <img
-                  alt="Vista aérea de nozes e sementes sobre superfície branca com iluminação editorial"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBxDFnu8NV5Da4dRfVdA6z7v52JXfyP3o_n2RWZZ5_aQn8uImM8kqGUFuunKrtaJ_loKdQYG29tpB9gI1wR6YaTeSlHgcTYdz9wB-es7o52tyl97m63VmeVrEZvJzFv5MceheN8T5Yvfe7_wbpRPwZTTgSKbr1mT7HyQc4sc6YdFZqBcdScX3S8RQ3qckKSW9s5ygvqlF0GYXTRZ7WjUxgy7K675WY22PqdlD-ob1y4rij8b77ghXTnY7AuKzKSIKrCX4JaYN18LC9"
-                />
-              </div>
-              <div>
-                <span className="text-secondary text-[10px] font-bold tracking-widest uppercase mb-1 block">
-                  Nutrientes
-                </span>
-                <h5 className="font-headline text-lg text-primary leading-tight">Gorduras Inteligentes</h5>
-                <p className="text-on-surface-variant text-xs mt-2 line-clamp-2">
-                  A base para a saúde cognitiva e hormonal.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-surface-container-lowest p-6 flex items-center gap-6 group cursor-pointer hover:shadow-md transition-shadow">
-              <div className="w-24 h-24 overflow-hidden flex-shrink-0">
-                <img
-                  alt="Close-up artístico de smoothie verde sendo servido em copo de cristal, fotografia macro"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQeuKcukqa3YPwdDqte_7wekg3qt1WleugJNX_lEvTJq4U9ger308LZW1RmkG2d2Eqwy6dow43jMFFKtRl1Jd0ekzjR1KnVkpRdUyjQqfIS_XOlecW46yrjKInfLeFRjcsejOLKCb9VaSvclicMFeflPxUmugivsJwdidnaWZJoYHyZ8FIgJQLxFeyS7vpHOQ1tEWPas1J6GmoavKfkVEawekpApMCW3tvuvmB1uxijhDJl_w0r_G3gdbM2aEZxclI-6uLPhvcxxP_"
-                />
-              </div>
-              <div>
-                <span className="text-secondary text-[10px] font-bold tracking-widest uppercase mb-1 block">
-                  Hábitos
-                </span>
-                <h5 className="font-headline text-lg text-primary leading-tight">Ritual Matinal</h5>
-                <p className="text-on-surface-variant text-xs mt-2 line-clamp-2">
-                  Como a hidratação redefine seu metabolismo.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-surface-container-lowest p-6 flex items-center gap-6 group cursor-pointer hover:shadow-md transition-shadow">
-              <div className="w-24 h-24 overflow-hidden flex-shrink-0">
-                <img
-                  alt="Alimentos e ciência nutricional — glicose e impacto dos alimentos no organismo"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="/A ciencia por tras de cada Grama.webp"
-                />
-              </div>
-              <div>
-                <span className="text-secondary text-[10px] font-bold tracking-widest uppercase mb-1 block">
-                  Ciência
-                </span>
-                <h5 className="font-headline text-lg text-primary leading-tight">Glicose em Foco</h5>
-                <p className="text-on-surface-variant text-xs mt-2 line-clamp-2">
-                  A ordem dos alimentos e o impacto no sangue.
-                </p>
-              </div>
-            </div>
+            {ARTICLES.map((article) => (
+              <button
+                key={article.title}
+                onClick={() => setOpenArticle(article)}
+                className="bg-surface-container-lowest p-6 flex items-center gap-6 group cursor-pointer hover:shadow-md transition-shadow text-left w-full"
+              >
+                <div className="w-24 h-24 overflow-hidden flex-shrink-0">
+                  <img
+                    alt={article.imageAlt}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    src={article.image}
+                  />
+                </div>
+                <div>
+                  <span className="text-secondary text-[10px] font-bold tracking-widest uppercase mb-1 block">
+                    {article.tag}
+                  </span>
+                  <h5 className="font-headline text-lg text-primary leading-tight">{article.title}</h5>
+                  <p className="text-on-surface-variant text-xs mt-2 line-clamp-2">{article.summary}</p>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {openArticle && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={() => setOpenArticle(null)}
+        >
+          <div
+            className="bg-surface-container-lowest max-w-xl w-full rounded-sm overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="w-full h-56 overflow-hidden">
+              <img
+                src={openArticle.image}
+                alt={openArticle.imageAlt}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-8">
+              <span className="text-secondary text-[10px] font-bold tracking-widest uppercase mb-3 block">
+                {openArticle.tag}
+              </span>
+              <h3 className="font-headline text-2xl text-primary leading-snug mb-2">
+                {openArticle.title}
+              </h3>
+              <div className="flex items-center text-on-surface-variant text-xs mb-6 gap-1">
+                <span className="material-symbols-outlined text-sm">schedule</span>
+                {openArticle.readTime}
+              </div>
+              <p className="text-on-surface-variant leading-relaxed whitespace-pre-line">
+                {openArticle.body}
+              </p>
+              <button
+                onClick={() => setOpenArticle(null)}
+                className="mt-8 flex items-center gap-2 text-secondary font-semibold text-sm hover:underline"
+              >
+                <span className="material-symbols-outlined text-base">close</span>
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
