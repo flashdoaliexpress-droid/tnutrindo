@@ -104,7 +104,8 @@ export default function Navbar() {
             ))}
             <button
               onClick={() => { setMobileOpen(false); handleCtaClick(); }}
-              className="mt-1 px-5 py-2.5 rounded-sm bg-secondary-container text-on-secondary-container text-sm font-semibold hover:brightness-105 transition-all"
+              className="mt-1 px-10 py-4 rounded-sm bg-white font-semibold text-base hover:brightness-95 transition-all"
+              style={{ color: '#1B4332' }}
             >
               Agendar Consulta
             </button>

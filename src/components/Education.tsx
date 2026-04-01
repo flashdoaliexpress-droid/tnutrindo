@@ -176,7 +176,7 @@ export default function Education() {
               <img
                 src={openArticle.image}
                 alt={openArticle.imageAlt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             <div className="p-8">
@@ -193,13 +193,23 @@ export default function Education() {
               <p className="text-on-surface-variant leading-relaxed whitespace-pre-line">
                 {openArticle.body}
               </p>
-              <button
-                onClick={() => setOpenArticle(null)}
-                className="mt-8 flex items-center gap-2 text-secondary font-semibold text-sm hover:underline"
-              >
-                <span className="material-symbols-outlined text-base">close</span>
-                Fechar
-              </button>
+              <div className="mt-8 flex items-center gap-4">
+                <button
+                  onClick={() => setOpenArticle(null)}
+                  className="flex items-center gap-2 text-secondary font-semibold text-sm hover:underline"
+                >
+                  <span className="material-symbols-outlined text-base">close</span>
+                  Fechar
+                </button>
+                <a
+                  href="#hero"
+                  onClick={() => setOpenArticle(null)}
+                  className="flex items-center gap-2 text-on-surface-variant font-semibold text-sm hover:text-primary transition-colors"
+                >
+                  <span className="material-symbols-outlined text-base">home</span>
+                  Voltar ao início
+                </a>
+              </div>
             </div>
           </div>
         </div>

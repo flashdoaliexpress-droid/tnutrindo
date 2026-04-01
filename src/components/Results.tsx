@@ -23,12 +23,12 @@ export default function Results() {
 
   return (
     <section id="resultados" className="bg-surface">
-      <div className="max-w-7xl mx-auto px-8 py-[100px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-[100px]">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <span className="font-label text-[11px] font-semibold uppercase tracking-[0.18em] text-secondary mb-4 block">
             Resultados
           </span>
-          <h2 className="font-headline text-[48px] font-bold leading-tight text-on-background mb-6">
+          <h2 className="font-headline text-2xl sm:text-4xl md:text-[48px] font-bold leading-tight text-on-background mb-6">
             Transformações reais, acompanhadas de perto.
           </h2>
           <p className="text-[17px] text-outline leading-relaxed">
