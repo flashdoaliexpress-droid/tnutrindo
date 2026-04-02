@@ -22,7 +22,7 @@ export default function CtaFinal() {
         <div
           className="absolute inset-0 bg-cover bg-center h-full w-full"
           style={{
-            backgroundImage: "url('/Imagem  CTA final.png')",
+            backgroundImage: "url('/Imagem CTA final.webp')",
           }}
         />
         <div

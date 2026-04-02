@@ -1,4 +1,4 @@
-const ABOUT_IMAGE = '/Imagem Sobre.png';
+const ABOUT_IMAGE = '/Imagem Sobre.webp';
 
 export default function About() {
   return (
@@ -11,6 +11,8 @@ export default function About() {
                 src={ABOUT_IMAGE}
                 alt="Stefani Moreira, nutricionista clínica e comportamental, em ambiente profissional"
                 className="w-full aspect-[3/4] object-cover object-top"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <p className="text-center text-sm text-outline font-label">

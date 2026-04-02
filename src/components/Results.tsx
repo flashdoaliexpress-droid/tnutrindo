@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
 const images = [
-  { src: '/Resultados de Pacientes 1.png', alt: 'Resultado de paciente 1' },
+  { src: '/Resultados de Pacientes 1.webp', alt: 'Resultado de paciente 1' },
   { src: '/Resultados de pacientes 2.webp', alt: 'Resultado de paciente 2' },
   { src: '/Resultados de pacientes 3.webp', alt: 'Resultado de paciente 3' },
-  { src: '/Resultados de pacientes 4.png', alt: 'Resultado de paciente 4' },
-  { src: '/Resultados de pacientes 5.png', alt: 'Resultado de paciente 5' },
-  { src: '/Resultados de pacientes 6.png', alt: 'Resultado de paciente 6' },
-  { src: '/Resultados de pacientes 7.png', alt: 'Resultado de paciente 7' },
-  { src: '/Resultados de pacientes 8.png', alt: 'Resultado de paciente 8' },
+  { src: '/Resultados de pacientes 4.webp', alt: 'Resultado de paciente 4' },
+  { src: '/Resultados de pacientes 5.webp', alt: 'Resultado de paciente 5' },
+  { src: '/Resultados de pacientes 6.webp', alt: 'Resultado de paciente 6' },
+  { src: '/Resultados de pacientes 7.webp', alt: 'Resultado de paciente 7' },
+  { src: '/Resultados de pacientes 8.webp', alt: 'Resultado de paciente 8' },
 ];
 
 const VISIBLE = 3;

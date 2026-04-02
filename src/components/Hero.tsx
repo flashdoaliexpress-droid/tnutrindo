@@ -8,8 +8,8 @@ interface CtaClicks {
 
 const DEFAULT_CTA: CtaClicks = { count: 0, lastClick: '' };
 
-const HERO_IMAGE_DESKTOP = '/Imagem Hero Desktop.png';
-const HERO_IMAGE_MOBILE = '/Imagem Hero Mobile.png';
+const HERO_IMAGE_DESKTOP = '/Imagem Hero Desktop.webp';
+const HERO_IMAGE_MOBILE = '/Imagem Hero Mobile.webp';
 
 export default function Hero() {
   const [, setCtaClicks] = useLocalStorage<CtaClicks>('tnutrindo_cta_clicks', DEFAULT_CTA);
@@ -30,6 +30,8 @@ export default function Hero() {
         alt="Prato com alimentos naturais frescos representando nutrição saudável"
         className="absolute inset-0 w-full h-full object-cover object-center hidden sm:block"
         loading="eager"
+        fetchPriority="high"
+        decoding="async"
       />
       {/* Mobile image */}
       <img
@@ -37,6 +39,8 @@ export default function Hero() {
         alt="Stefani Moreira — nutricionista clínica e comportamental"
         className="absolute inset-0 w-full h-full object-cover object-top block sm:hidden"
         loading="eager"
+        fetchPriority="high"
+        decoding="async"
       />
 
       {/* Desktop overlay — solid */}
